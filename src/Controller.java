@@ -14,7 +14,6 @@ public class Controller{
         @Override
         public void actionPerformed(ActionEvent e) {
             String input = v1.getInputText();
-            //System.out.println(input);
             v1.jTextField.setText("");
             m1.addData(input);
             String word = m1.getdata();
@@ -27,7 +26,6 @@ public class Controller{
         @Override
         public void actionPerformed(ActionEvent e) {
             int val = v1.getSelectedVal();
-            //System.out.println(val);
             m1.removeData(val);
             v1.removeListData(val);
         }
