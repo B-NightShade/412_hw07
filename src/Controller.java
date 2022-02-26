@@ -15,6 +15,7 @@ public class Controller{
         public void actionPerformed(ActionEvent e) {
             String input = v1.getInputText();
             //System.out.println(input);
+            v1.jTextField.setText("");
             m1.addData(input);
             String word = m1.getdata();
             v1.addListdata(word);
