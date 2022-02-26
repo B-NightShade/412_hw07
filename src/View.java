@@ -4,6 +4,8 @@ import java.awt.event.ActionListener;
 
 public class View {
     static JTextField jTextField = new JTextField(20);
+    static DefaultListModel<String> listmodel = new DefaultListModel<>();
+    static JList<String> list = new JList<String>(listmodel);
 
     public static void main() {
         JPanel myPanel = new JPanel();
@@ -14,18 +16,20 @@ public class View {
         myPanel.add(add);
         JButton del = new JButton("Delete");
         JFrame jFrame = new JFrame();
-        jFrame.add(BorderLayout.NORTH, myPanel);
-        jFrame.add(BorderLayout.SOUTH, del);
+        jFrame.getContentPane().add(BorderLayout.NORTH, myPanel);
+        jFrame.getContentPane().add(BorderLayout.SOUTH, del);
+        jFrame.getContentPane().add(BorderLayout.CENTER, list);
         jFrame.setSize(500, 500);
         jFrame.setVisible(true);
     }
-        void setAddActionListener (ActionListener al){
-
-        }
 
         String getInputText () {
             String input = jTextField.getText();
             return input;
+        }
+
+        void addListdata(String item){
+            listmodel.addElement(item);
         }
 
 }

@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class Controller{
     static View v1 = new View();
@@ -13,6 +14,11 @@ public class Controller{
         @Override
         public void actionPerformed(ActionEvent e) {
             String input = v1.getInputText();
+            System.out.println(input);
+            m1.addData(input);
+            String word = m1.getdata();
+            v1.addListdata(word);
+
         }
     }
 
