@@ -14,14 +14,21 @@ public class Controller{
         @Override
         public void actionPerformed(ActionEvent e) {
             String input = v1.getInputText();
-            System.out.println(input);
+            //System.out.println(input);
             m1.addData(input);
             String word = m1.getdata();
             v1.addListdata(word);
-
         }
     }
 
+    static class deleteButtonAL implements ActionListener{
 
-
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            int val = v1.getSelectedVal();
+            //System.out.println(val);
+            m1.removeData(val);
+            v1.removeListData(val);
+        }
+    }
 }

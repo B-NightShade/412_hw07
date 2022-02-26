@@ -11,4 +11,9 @@ public class Model {
         String input2 = data.get(i-1);
         return input2;
     }
+
+    void removeData(int index){
+        int i = index;
+        data.remove(i);
+    }
 }

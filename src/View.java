@@ -14,7 +14,10 @@ public class View {
 
         add.addActionListener(new Controller.addButtonAL());
         myPanel.add(add);
+
         JButton del = new JButton("Delete");
+        del.addActionListener(new Controller.deleteButtonAL());
+
         JFrame jFrame = new JFrame();
         jFrame.getContentPane().add(BorderLayout.NORTH, myPanel);
         jFrame.getContentPane().add(BorderLayout.SOUTH, del);
@@ -30,6 +33,15 @@ public class View {
 
         void addListdata(String item){
             listmodel.addElement(item);
+        }
+
+        void removeListData(int index){
+            listmodel.remove(index);
+        }
+
+        int getSelectedVal(){
+            int select = list.getSelectedIndex();
+            return select;
         }
 
 }
